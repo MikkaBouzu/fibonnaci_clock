@@ -1,11 +1,13 @@
 from datetime import datetime
 
-FIB = [5, 3, 2, 1, 1]
-
 
 def get_time():
     now = datetime.now()
-    print(f"It is currently: {now.hour}:{now.minute}")
+    if now.minute >= 10:
+        print(f"It is currently: {now.hour}:{now.minute}")
+    else:
+        print(f"It is currently: {now.hour}:0{now.minute}")
+
     hour = datetime.time(now).hour
     # 12 hour system
     if hour > 12:
@@ -33,20 +35,20 @@ def fibonacci_representation(n):
 
 
 def clock_colors(hours, minutes):
-    colors = {"R": [],
-               "G": [],
-               "B": [],
-               "0": []}
-    fib = [5, 3, 2, 1, 1]
+    colors = {"r": [],
+               "g": [],
+               "b": [],
+               "w": []}
+    fib = [4, 3, 2, 1, 0]
     for h, m, f in zip(hours, minutes, fib):
         if h == 1 and m == 1:
-            colors["B"] += [f]
+            colors["b"] += [f]
         elif h == 1:
-            colors["R"] += [f]
+            colors["r"] += [f]
         elif m == 1:
-            colors["G"] += [f]
+            colors["g"] += [f]
         else:
-            colors["0"] += [f]
+            colors["w"] += [f]
     return colors
 
 
