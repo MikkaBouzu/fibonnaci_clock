@@ -20,7 +20,7 @@ def get_time():
 def fibonacci_representation(n):
     # simple implementation of the (modified) Zeckendorf algorithm
     if n == 0:
-        return [0]
+        return [0, 0, 0, 0, 0]
     fib = [5, 3, 2, 1, 1]
     digits = []
     for f in fib:
